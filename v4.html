@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sentinel Foundation X Savage Tacticians | V4 Terminal</title>
+<meta name="description" content="The Sentinel Foundation X SavTac collab tee. A portion of the proceeds from every shirt goes to Sentinel Foundation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;600&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--g:#33ff66;--g2:#1fd655;--gd:#0f7a33;--gx:rgba(51,255,102,.14);--bg:#050806;--bg2:#0b0f0c;--line:#16301f;--tx:#d9e6dc;--mut:#8fa596;--term:"VT323",ui-monospace,monospace;--mono:"IBM Plex Mono",ui-monospace,monospace;--sans:"Montserrat",system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 var(--sans);overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--g)}
+.lock{overflow:hidden}
+html.lock .rn-btn{visibility:hidden}
+.wrap{width:min(1180px,100% - 40px);margin:0 auto}
+.mono{font-family:var(--mono)}
+.tag{font:600 12px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--g)}
+.tag::before{content:"> "}
+h1,h2,h3{font-family:var(--sans);font-weight:800;text-transform:uppercase;letter-spacing:.02em;line-height:1.08;margin:.3em 0 .5em}
+h2{font-size:clamp(28px,4vw,44px)}
+h2 em,h1 em{font-style:normal;color:var(--g);text-shadow:0 0 18px rgba(51,255,102,.35)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border:1px solid var(--g);background:var(--g);color:#031007;font:700 13px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;cursor:pointer}
+.btn:hover{background:#7dffa0}
+.btn--ghost{background:transparent;color:var(--g)}
+.btn--ghost:hover{background:var(--gx)}
+.btn:focus-visible,button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible+span{outline:2px solid #fff;outline-offset:3px}
+
+/* ---------- Intro (in-page terminal) ---------- */
+.intro{position:fixed;inset:0;z-index:100;background:#000;color:var(--g);font:clamp(18px,2.3vw,28px)/1.35 var(--term);display:flex;flex-direction:column;justify-content:center;padding:clamp(20px,6vw,90px);overflow:hidden}
+.intro[hidden]{display:none}
+.intro::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.35) 0 1px,transparent 1px 3px);z-index:2}
+.intro::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.75));z-index:2}
+.intro__screen{position:relative;z-index:1;max-width:1100px;width:100%;margin:0 auto;text-shadow:0 0 6px rgba(51,255,102,.75),0 0 18px rgba(51,255,102,.25);animation:flick 4s infinite steps(1)}
+@keyframes flick{0%,100%{opacity:1}47%{opacity:.94}48%{opacity:1}83%{opacity:.97}}
+.ln{min-height:1.35em;white-space:pre-wrap;overflow-wrap:anywhere}
+.ln .p{color:#9dffb6}
+.ln.dim{color:#1a9a40;text-shadow:none}
+.ln.big{font-size:clamp(44px,9vw,120px);line-height:1;letter-spacing:.06em;margin:.15em 0;color:#b6ffc8;text-shadow:0 0 10px rgba(51,255,102,.9),0 0 34px rgba(51,255,102,.45)}
+.cur{display:inline-block;width:.6em;height:1em;margin-left:2px;vertical-align:-.12em;background:var(--g);box-shadow:0 0 8px var(--g);animation:blink 1s steps(1) infinite}
+.big .cur{width:.45em}
+@keyframes blink{50%{opacity:0}}
+.intro__skip{position:absolute;z-index:3;right:clamp(14px,3vw,32px);bottom:clamp(14px,3vw,28px);display:flex;align-items:center;gap:14px;font:14px/1 var(--mono);color:#1a9a40}
+.intro__skip button{font:600 13px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--g);background:transparent;border:1px solid var(--gd);padding:10px 14px;cursor:pointer}
+.intro__skip button:hover{background:var(--gx)}
+.intro.out{animation:glitch .45s steps(2) forwards,fadeout .5s .4s ease forwards}
+@keyframes glitch{0%{transform:none;filter:none}20%{transform:translate(-6px,2px) skewX(4deg);filter:hue-rotate(40deg)}40%{transform:translate(5px,-2px);clip-path:inset(12% 0 30% 0)}60%{transform:translate(-3px,0);clip-path:inset(40% 0 8% 0)}80%{transform:translate(2px,1px);clip-path:none}100%{transform:none}}
+@keyframes fadeout{to{opacity:0;visibility:hidden}}
+@media (max-width:600px){.intro__skip span{display:none}}
+
+/* ---------- Top bar ---------- */
+.bar{position:sticky;top:0;z-index:20;background:rgba(5,8,6,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:16px;min-height:64px}
+.bar__logos{display:flex;align-items:center;gap:14px;min-width:0}
+.bar__logos img{height:34px;width:auto}
+.bar__logos .x{font:20px var(--term);color:var(--g)}
+.bar__right{margin-left:auto;display:flex;align-items:center;gap:16px;font:12px var(--mono)}
+.bar__right a{color:var(--mut);text-decoration:none}
+.bar__right a:hover{color:var(--g)}
+.bar__right .btn{padding:10px 14px;color:#031007}
+@media (max-width:640px){.bar__logos img{height:24px}.bar__logos{gap:8px}.bar__right .btn,.bar__right a{display:none}.bar__right{font-size:11px}.bar__right .replay{white-space:nowrap}}
+.intro__skip button:focus-visible{outline:2px solid var(--g);outline-offset:2px}
+@media (max-width:640px){.intro__skip button{min-height:44px}.btn{min-height:44px}.replay{min-height:44px;padding:0 4px!important}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;padding:clamp(40px,7vw,96px) 0 clamp(40px,6vw,80px);border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 80% 30%,rgba(51,255,102,.08),transparent 60%),linear-gradient(var(--bg),var(--bg2))}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(51,255,102,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(51,255,102,.05) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+.hero h1{font-size:clamp(36px,5.6vw,70px)}
+.hero__lede{font-size:clamp(16px,1.6vw,19px);color:var(--tx);max-width:34em}
+.hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 22px}
+.hero__meta{display:flex;flex-wrap:wrap;gap:8px 22px;font:13px var(--mono);color:var(--mut)}
+.hero__meta b{color:var(--g);font-weight:600}
+.hero__art{position:relative;border:1px solid var(--line);background:#000}
+.hero__art img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;filter:saturate(.9) contrast(1.05)}
+.hero__art figcaption{position:absolute;left:0;right:0;bottom:0;padding:10px 14px;font:12px var(--mono);color:var(--g);background:linear-gradient(transparent,rgba(0,0,0,.85))}
+.corner{position:absolute;width:18px;height:18px;border:2px solid var(--g)}
+.corner.tl{top:-6px;left:-6px;border-right:0;border-bottom:0}.corner.br{bottom:-6px;right:-6px;border-left:0;border-top:0}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+
+/* ---------- Sections ---------- */
+.sec{padding:clamp(56px,8vw,104px) 0;border-bottom:1px solid var(--line)}
+.sec--alt{background:var(--bg2)}
+.sec__head{max-width:760px;margin-bottom:34px}
+.sec__head p{color:var(--mut)}
+
+/* ---------- Buy module ---------- */
+.buy{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,56px);align-items:start}
+.buy__stage{position:relative;background:#000;border:1px solid var(--line)}
+.buy__stage img{width:100%;height:auto;aspect-ratio:1200/1528;object-fit:cover}
+.buy__stage .lbl{position:absolute;top:12px;left:12px;font:12px var(--mono);color:var(--g);background:rgba(0,0,0,.7);border:1px solid var(--gd);padding:5px 8px}
+.thumbs{display:flex;gap:10px;margin-top:10px}
+.thumbs button{padding:0;width:84px;border:1px solid var(--line);background:#000;cursor:pointer}
+.thumbs button.on{border-color:var(--g);box-shadow:0 0 0 1px var(--g)}
+.panel{border:1px solid var(--line);background:#070a08;padding:clamp(20px,3vw,32px)}
+.panel h3{font-size:clamp(22px,2.4vw,28px);margin:.3em 0 .2em}
+.price{font:40px/1 var(--term);color:var(--g);text-shadow:0 0 12px rgba(51,255,102,.4)}
+.give{border-left:2px solid var(--g);padding:6px 0 6px 12px;margin:16px 0 20px;color:var(--tx)}
+fieldset{border:0;padding:0;margin:0 0 18px}
+legend{font:600 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:10px}
+legend b{color:var(--tx)}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.opt span{display:flex;align-items:center;gap:8px;min-width:52px;justify-content:center;padding:10px 14px;border:1px solid #2a3a30;font:600 14px var(--mono);color:var(--tx);cursor:pointer}
+.opt input:checked+span{border-color:var(--g);color:var(--g);background:var(--gx)}
+.sw{width:14px;height:14px;border:1px solid #555;display:inline-block}
+.need{animation:shake .4s}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.buy__go{width:100%;justify-content:center;padding:17px}
+.buy__go:not(.ready){background:transparent;color:var(--g)}
+.hint{min-height:1.4em;margin:8px 0 0;font:13px var(--mono);color:#ffcc66}
+.specs{list-style:none;padding:0;margin:18px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:10px;font:13px var(--mono);color:var(--mut)}
+.specs b{display:block;color:var(--tx);font-weight:600}
+@media (max-width:860px){.buy{grid-template-columns:1fr}}
+
+/* ---------- Mission + stats ---------- */
+.mission{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,64px);align-items:start}
+.mission__copy p{color:var(--tx)}
+.mission__logo{width:min(280px,70%);height:auto;margin:6px 0 22px;opacity:.95}
+.stats{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.stats li{background:#060907;padding:22px 18px;min-width:0}
+.stats b{display:block;font:clamp(44px,5vw,62px)/1 var(--term);color:var(--g);text-shadow:0 0 14px rgba(51,255,102,.35)}
+.stats span{display:block;margin-top:8px;font:12px/1.45 var(--mono);color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+.src{margin:12px 0 0;font:12px var(--mono);color:var(--mut)}
+@media (max-width:860px){.mission{grid-template-columns:1fr}}
+@media (max-width:520px){.stats{grid-template-columns:1fr 1fr}}
+
+/* ---------- Gallery ---------- */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gal figure{margin:0;border:1px solid var(--line);background:#000}
+.gal img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.gal figcaption{padding:10px 12px;font:12px var(--mono);color:var(--mut)}
+@media (max-width:760px){.gal{grid-template-columns:1fr 1fr}.gal figure:first-child{grid-column:1/-1}.gal figure:first-child img{aspect-ratio:1/1}}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:860px}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 34px 18px 0;position:relative;font:600 15px var(--mono);color:var(--tx)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"$ ";color:var(--g)}
+.faq summary::after{content:"+";position:absolute;right:4px;top:14px;font:26px var(--term);color:var(--g)}
+.faq details[open] summary::after{content:"-"}
+.faq p{margin:0 0 18px;color:var(--mut);max-width:62em}
+
+/* ---------- Final CTA + fine print ---------- */
+.final{text-align:center;padding:clamp(64px,9vw,120px) 0;background:radial-gradient(ellipse at center,rgba(51,255,102,.09),transparent 65%)}
+.final h2{font-size:clamp(32px,5vw,58px)}
+.final p{color:var(--mut);max-width:36em;margin:0 auto 26px}
+.final .hero__cta{justify-content:center}
+.fine{padding:28px 0 90px;font:12px/1.6 var(--mono);color:var(--mut)}
+.fine p{margin:0 0 8px}
+.fine button{font:inherit;color:var(--g);background:none;border:0;padding:0;text-decoration:underline;cursor:pointer}
+
+/* ---------- Sticky mobile buy ---------- */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;background:rgba(5,8,6,.96);border-top:1px solid var(--gd)}
+.sticky span{font:13px var(--mono);color:var(--tx)}
+.sticky .btn{padding:12px 16px}
+@media (max-width:640px){.sticky{display:flex}}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="intro" id="intro" role="dialog" aria-modal="true" aria-label="Intro: Sentinel Foundation and Savage Tacticians collab" hidden>
+  <div class="intro__screen" id="screen" aria-live="off"></div>
+  <div class="intro__skip"><span>Press any key to skip</span><button type="button" id="skip">Skip intro</button></div>
+</div>
+
+<header class="bar">
+  <div class="wrap">
+    <div class="bar__logos">
+      <img src="assets/sentinel-logo-white.png" alt="Sentinel Foundation" width="1200" height="394">
+      <span class="x" aria-hidden="true">X</span>
+      <img src="assets/savtac-logo-white.png" alt="Savage Tacticians" width="480" height="103">
+    </div>
+    <div class="bar__right">
+      <a href="#mission">Mission</a>
+      <button type="button" class="replay mono" style="font:12px var(--mono);color:var(--mut);background:none;border:0;cursor:pointer;padding:0">Replay intro</button>
+      <a class="btn" href="#buy">Get the tee</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <div>
+      <div class="tag">Collab loaded: Sentinel Foundation X SavTac</div>
+      <h1 id="hero-title">Wear it for <em>the mission.</em></h1>
+      <p class="hero__lede">Savage Tacticians partnered with Sentinel Foundation on this tee. For every collab shirt sold, a portion of the proceeds goes to Sentinel's work protecting vulnerable children.</p>
+      <div class="hero__cta">
+        <a class="btn" href="#buy">Get the tee &rarr;</a>
+        <a class="btn btn--ghost" href="#mission">Read the mission</a>
+      </div>
+      <div class="hero__meta"><span><b>$34.99</b> graphic tee</span><span>Black / OD Green</span><span>S to 3XL</span></div>
+    </div>
+    <figure class="hero__art" style="margin:0">
+      <span class="corner tl" aria-hidden="true"></span><span class="corner br" aria-hidden="true"></span>
+      <img src="https://cdn.shopify.com/s/files/1/1730/9811/files/Sentinel_Foundation_Tactical_Vigilante.png?v=1794615680&amp;width=1100" alt="Collab tee in Black, back print, worn" width="1254" height="1254" fetchpriority="high">
+      <figcaption>FILE: SF-X-SAVTAC / BACK PRINT</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec" id="buy" aria-labelledby="buy-title">
+  <div class="wrap">
+    <div class="sec__head">
+      <div class="tag">Gear up</div>
+      <h2 id="buy-title">Pick your <em>color and size</em></h2>
+    </div>
+    <div class="buy" data-buy>
+      <div>
+        <div class="buy__stage">
+          <span class="lbl" data-lbl>BLACK / BACK</span>
+          <img data-main src="https://cdn.shopify.com/s/files/1/1730/9811/files/Sb2.jpg?v=1794615437&amp;width=1000" alt="Sentinel Foundation X SavTac tee in Black, back" width="1200" height="1528">
+        </div>
+        <div class="thumbs">
+          <button type="button" data-thumb="back" class="on" aria-pressed="true" aria-label="Show back"><img src="https://cdn.shopify.com/s/files/1/1730/9811/files/Sb2.jpg?v=1794615437&amp;width=200" alt="" width="200" height="255"></button>
+          <button type="button" data-thumb="front" aria-pressed="false" aria-label="Show front"><img src="https://cdn.shopify.com/s/files/1/1730/9811/files/Sb1.jpg?v=1794615437&amp;width=200" alt="" width="200" height="259"></button>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="tag">The collab tee</div>
+        <h3>Sentinel Foundation X SavTac</h3>
+        <div class="price">$34.99</div>
+        <p class="give">A portion of the proceeds from every shirt goes to Sentinel Foundation.</p>
+        <fieldset>
+          <legend>Color: <b data-color-name>Black</b></legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="color" value="black" checked data-color><span><i class="sw" style="background:#111214"></i>Black</span></label>
+            <label class="opt"><input type="radio" name="color" value="green" data-color><span><i class="sw" style="background:#7a7552"></i>OD Green</span></label>
+          </div>
+        </fieldset>
+        <fieldset data-sizes>
+          <legend>Size</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="size" value="S" data-size><span>S</span></label>
+            <label class="opt"><input type="radio" name="size" value="M" data-size><span>M</span></label>
+            <label class="opt"><input type="radio" name="size" value="L" data-size><span>L</span></label>
+            <label class="opt"><input type="radio" name="size" value="XL" data-size><span>XL</span></label>
+            <label class="opt"><input type="radio" name="size" value="2XL" data-size><span>2XL</span></label>
+            <label class="opt"><input type="radio" name="size" value="3XL" data-size><span>3XL</span></label>
+          </div>
+        </fieldset>
+        <a class="btn buy__go" href="https://sav-tac.com/products/sentinel-foundation-x-savtac" data-go>Select a size</a>
+        <p class="hint" data-hint aria-live="polite"></p>
+        <ul class="specs">
+          <li><b>Style</b>Graphic tee</li>
+          <li><b>Sizes</b>S to 3XL</li>
+          <li><b>Colors</b>Black, OD Green</li>
+          <li><b>Print</b>Chest emblem, full back</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--alt" id="mission" aria-labelledby="mission-title">
+  <div class="wrap mission">
+    <div class="mission__copy">
+      <div class="tag">Mission brief</div>
+      <h2 id="mission-title">Until every child <em>is safe.</em></h2>
+      <img class="mission__logo" src="assets/sentinel-logo-white.png" alt="Sentinel Foundation" width="1200" height="394" loading="lazy">
+      <p>Sentinel Foundation helps protect vulnerable children through counter-trafficking support, crisis response, and advanced training for those on the front lines.</p>
+      <p>Its teams work alongside law enforcement and trusted partners to identify victims, develop actionable intelligence, and support operations designed to disrupt the individuals and networks responsible for child exploitation.</p>
+      <p>Savage Tacticians is partnering with Sentinel to help fund that work. Every collab shirt sold sends a portion of the proceeds to Sentinel Foundation.</p>
+    </div>
+    <div>
+      <div class="tag">Sentinel Foundation, 2025</div>
+      <ul class="stats">
+        <li><b>165</b><span>Children safeguarded or recovered</span></li>
+        <li><b>680+</b><span>Cases worked</span></li>
+        <li><b>219</b><span>Arrests, direct and partner operations</span></li>
+        <li><b>150+</b><span>Law enforcement and partners trained</span></li>
+        <li><b>9</b><span>Countries impacted</span></li>
+        <li><b>200+</b><span>Children supported through aftercare, cumulative</span></li>
+      </ul>
+      <p class="src">Source: Sentinel Foundation 2025 Annual Report, published at foundationsentinel.org.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="gal-title">
+  <div class="wrap">
+    <div class="sec__head">
+      <div class="tag">Field photos</div>
+      <h2 id="gal-title">Made to be worn. <em>Made to be asked about.</em></h2>
+    </div>
+    <div class="gal">
+      <figure><img src="https://cdn.shopify.com/s/files/1/1730/9811/files/SF_1.jpg?v=1794615519&amp;width=1000" alt="Sentinel Foundation collab artwork: Predators should fear the dark too" width="1200" height="1201" loading="lazy"><figcaption>Back print: "Predators should fear the dark too."</figcaption></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/1730/9811/files/Sentinel_Foundation_Tactical_Patrol.png?v=1794615825&amp;width=800" alt="Collab tee in OD Green, back print, worn" width="1128" height="1394" loading="lazy"><figcaption>OD Green, back</figcaption></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/1730/9811/files/Sg1.jpg?v=1794615446&amp;width=800" alt="OD Green tee, front" width="1200" height="1554" loading="lazy"><figcaption>OD Green, front</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--alt" aria-labelledby="faq-title">
+  <div class="wrap">
+    <div class="sec__head">
+      <div class="tag">Help</div>
+      <h2 id="faq-title">Questions, <em>answered</em></h2>
+    </div>
+    <div class="faq">
+      <details><summary>Where does the money go?</summary><p>For every collab shirt sold, we donate a portion of the proceeds to help fuel Sentinel Foundation's mission.</p></details>
+      <details><summary>Who is Sentinel Foundation?</summary><p>A 501(c)(3) nonprofit that helps protect vulnerable children through counter-trafficking support, crisis response, and advanced training for those on the front lines.</p></details>
+      <details><summary>Where do the numbers come from?</summary><p>They come from Sentinel Foundation's 2025 Annual Report, published on their website. All figures are for 2025 except the aftercare figure, which is cumulative.</p></details>
+      <details><summary>What sizes and colors are there?</summary><p>Sizes S through 3XL, in Black or OD Green. $34.99.</p></details>
+      <details><summary>What's on the shirt?</summary><p>A small emblem on the front chest and the full Sentinel Foundation print across the back: "Predators should fear the dark too."</p></details>
+      <details><summary>Where do I buy it?</summary><p>On sav-tac.com, the Savage Tacticians store.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final" aria-labelledby="final-title">
+  <div class="wrap">
+    <div class="tag" style="display:inline-block">Ready</div>
+    <h2 id="final-title">$34.99. <em>For the mission.</em></h2>
+    <p>A portion of the proceeds from every Sentinel Foundation X SavTac tee goes to Sentinel Foundation.</p>
+    <div class="hero__cta">
+      <a class="btn" href="https://sav-tac.com/products/sentinel-foundation-x-savtac">Buy the tee &rarr;</a>
+      <a class="btn btn--ghost" href="https://www.foundationsentinel.org" rel="noopener">Visit Sentinel Foundation</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="fine">
+  <div class="wrap">
+    <p><strong>The fine print.</strong> For every collab shirt sold, we donate a portion of the proceeds to help fuel Sentinel Foundation's mission.</p>
+    <p>Sentinel Foundation figures are from Sentinel Foundation's 2025 Annual Report, published at foundationsentinel.org.</p>
+    <p><button type="button" class="replay">Replay intro</button></p>
+  </div>
+</footer>
+
+<div class="sticky"><span>$34.99 &middot; For the mission</span><a class="btn" href="#buy">Get the tee</a></div>
+
+<script>
+(function(){
+'use strict';
+/* ---------- Intro: typed terminal sequence ---------- */
+var intro = document.getElementById('intro'), screen = document.getElementById('screen');
+var run = 0, active = false;
+var MISSION = 'Sentinel Foundation helps protect vulnerable children through counter-trafficking support, crisis response, and advanced training for those on the front lines.';
+var PARTNER = 'Savage Tacticians is partnering with Sentinel to raise money for that mission. A portion of the proceeds from every collab shirt goes to Sentinel Foundation.';
+function sleep(ms, id){ return new Promise(function(res, rej){ setTimeout(function(){ id === run ? res() : rej('stop'); }, ms); }); }
+var cursor = document.createElement('span'); cursor.className = 'cur'; cursor.setAttribute('aria-hidden', 'true');
+function line(cls, prompt){
+  var d = document.createElement('div'); d.className = 'ln' + (cls ? ' ' + cls : '');
+  if (prompt){ var p = document.createElement('span'); p.className = 'p'; p.textContent = 'SENTINEL_FOUNDATION> '; d.appendChild(p); }
+  var t = document.createElement('span'); d.appendChild(t); d.appendChild(cursor);
+  screen.appendChild(d); return t;
+}
+async function type(el, text, id, min, max, step){
+  step = step || 1; var human = !step || step === 1;
+  for (var i = 0; i < text.length; i += step){
+    el.textContent += text.slice(i, i + step);
+    var ms = min + Math.random() * (max - min);
+    if (human && text[i] === ' ') ms += min * .6;
+    if (human && Math.random() < .05) ms += 110; // occasional hesitation reads as a human typist
+    await sleep(ms, id);
+  }
+}
+async function sequence(id){
+  var t = line('', true);
+  await sleep(500, id);
+  await type(t, 'collab --load', id, 55, 110);
+  await sleep(320, id);
+  t = line();
+  t.textContent = 'Collab loading';
+  for (var k = 0; k < 4; k++){ await sleep(170, id); t.textContent += '.'; }
+  var base = t.textContent + ' ';
+  for (var n = 1; n <= 12; n++){
+    var pct = Math.min(100, Math.round(n / 12 * 100));
+    t.textContent = base + '[' + '#'.repeat(n) + '-'.repeat(12 - n) + '] ' + pct + '%';
+    await sleep(55 + Math.random() * 60, id);
+  }
+  await sleep(220, id);
+  t = line('big');
+  await type(t, 'SAVAGE TACTICIANS', id, 22, 34);
+  await sleep(380, id);
+  t = line('dim');
+  t.textContent = 'link established :: sentinel foundation x savage tacticians';
+  await sleep(650, id);              // the Enter beat
+  t = line('', true);
+  await sleep(250, id);
+  await type(t, 'mission --brief', id, 38, 80);
+  await sleep(300, id);
+  t = line();
+  await type(t, MISSION, id, 14, 20, 3);
+  t = line();
+  await type(t, PARTNER, id, 14, 20, 3);
+  await sleep(1200, id);
+}
+function finish(){
+  if (!active) return;
+  active = false; run++;
+  document.documentElement.classList.remove('lock');
+  document.removeEventListener('keydown', onKey, true);
+  intro.classList.add('out');
+  setTimeout(function(){ intro.hidden = true; intro.classList.remove('out'); screen.textContent = ''; }, 950);
+}
+function onKey(e){ e.preventDefault(); finish(); }
+function start(){
+  if (active) return;
+  var id = ++run; active = true;
+  screen.textContent = '';
+  intro.classList.remove('out'); intro.hidden = false;
+  document.documentElement.classList.add('lock');
+  scrollTo(0, 0);
+  document.addEventListener('keydown', onKey, true);
+  document.getElementById('skip').focus({ preventScroll: true });
+  window.__introStart = performance.now();
+  sequence(id).then(function(){ if (id === run){ window.__introMs = performance.now() - window.__introStart; finish(); } }, function(){});
+}
+document.getElementById('skip').addEventListener('click', finish);
+document.querySelectorAll('.replay').forEach(function(b){ b.addEventListener('click', start); });
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) start();
+
+/* ---------- Buy module: color swaps photos, size unlocks the buy link ---------- */
+var CDN = 'https://cdn.shopify.com/s/files/1/1730/9811/files/';
+var IMG = { black:{ label:'Black', back:CDN+'Sb2.jpg?v=1794615437', front:CDN+'Sb1.jpg?v=1794615437' },
+            green:{ label:'OD Green', back:CDN+'Sg2.jpg?v=1794615446', front:CDN+'Sg1.jpg?v=1794615446' } };
+var b = document.querySelector('[data-buy]');
+var main = b.querySelector('[data-main]'), go = b.querySelector('[data-go]'), hint = b.querySelector('[data-hint]');
+var sizes = b.querySelector('[data-sizes]'), cname = b.querySelector('[data-color-name]'), lbl = b.querySelector('[data-lbl]');
+var thumbs = b.querySelectorAll('[data-thumb]');
+var st = { color:'black', view:'back', size:'' };
+function render(){
+  var c = IMG[st.color];
+  main.src = c[st.view] + '&width=1000';
+  main.alt = 'Sentinel Foundation X SavTac tee in ' + c.label + ', ' + st.view;
+  lbl.textContent = (c.label + ' / ' + st.view).toUpperCase();
+  thumbs.forEach(function(t){
+    var v = t.getAttribute('data-thumb');
+    t.querySelector('img').src = c[v] + '&width=200';
+    t.classList.toggle('on', v === st.view);
+    t.setAttribute('aria-pressed', v === st.view);
+  });
+  cname.textContent = c.label;
+  go.textContent = st.size ? 'Buy now: ' + c.label + ' / ' + st.size : 'Select a size';
+  go.classList.toggle('ready', !!st.size);
+  if (st.size) hint.textContent = '';
+}
+b.addEventListener('change', function(e){
+  var t = e.target;
+  if (t.hasAttribute('data-color')) st.color = t.value;
+  if (t.hasAttribute('data-size')) st.size = t.value;
+  render();
+});
+thumbs.forEach(function(t){ t.addEventListener('click', function(){ st.view = t.getAttribute('data-thumb'); render(); }); });
+go.addEventListener('click', function(e){
+  if (st.size) return;
+  e.preventDefault();
+  sizes.classList.remove('need'); void sizes.offsetWidth; sizes.classList.add('need');
+  hint.textContent = 'Pick a size first.';
+  sizes.querySelector('input').focus();
+});
+render();
+})();
+</script>
+<script src="review-notes.js" data-page="sentinel-v4"></script>
+</body>
+</html>

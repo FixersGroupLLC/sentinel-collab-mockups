@@ -1,0 +1,658 @@
+<!doctype html>
+<!-- Mockup V3.2 (Sentinel Foundation site style): Sentinel Foundation X SavTac collab landing page. Standalone draft, not live. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sentinel Foundation X SavTac | Savage Tacticians</title>
+<meta name="description" content="Sentinel Foundation X SavTac collab tee. A portion of the proceeds from every shirt sold goes to Sentinel Foundation's counter-trafficking mission.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Lato:ital,wght@0,300;0,400;0,700;1,400&amp;family=Poppins:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#050505}
+.sv img{max-width:100%;height:auto;display:block}
+.sv{--void:#050505;--night:#0a0a0b;--ink:#111213;--char:#18191a;--graphite:#242526;--steel:#3b3d3f;--smoke:#5e6163;--fog:#8e9193;--mist:#c3c5c6;--bone:#ececeb;--white:#f5f5f4;--red:#d8232b;--red-dim:rgba(216,35,43,.55);--line:rgba(236,236,235,.1);--line-strong:rgba(236,236,235,.28);--display:"Michroma","Eurostile",sans-serif;--type:"Special Elite","Courier New",monospace;--body:"Barlow",system-ui,sans-serif;--cond:"Barlow Condensed","Barlow",sans-serif;--wrap:1240px;--gutter:18px;position:relative;background:var(--night);color:var(--bone);font:16px/1.55 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip}
+@media(min-width:640px){.sv{--gutter:24px}}
+.sv a{color:inherit}
+.sv-wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+.sv-sec{position:relative;padding:72px 0;overflow:hidden}
+@media(min-width:900px){.sv-sec{padding:116px 0}}
+.sv-sec>.sv-wrap{position:relative;z-index:1}
+.sv-h{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.03em;line-height:1.14;margin:0;text-wrap:balance;color:var(--white)}
+.sv-h em{font-style:normal;color:var(--red)}
+.sv-eyebrow{display:inline-flex;align-items:center;gap:10px;font:600 12px/1 var(--cond);letter-spacing:.32em;text-transform:uppercase;color:var(--fog)}
+.sv-eyebrow::before{content:"";width:24px;height:1px;background:var(--red)}
+.sv-file{font:400 12px/1 var(--type);color:var(--smoke);letter-spacing:.04em;text-transform:uppercase}
+.sv-file b{color:var(--red);font-weight:400}
+.sv-sec-head{display:grid;gap:14px;margin-bottom:34px}
+.sv-sec-head h2{font-size:clamp(24px,6.4vw,42px);margin-top:12px}
+.sv-sec-head p{max-width:440px;margin:0;color:var(--fog)}
+@media(min-width:900px){.sv-sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px}}
+.sv-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 14px;font:700 13px/1.1 var(--cond);letter-spacing:.14em;text-align:center;text-transform:uppercase;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s,background .25s,color .25s,border-color .25s,box-shadow .25s,opacity .25s}
+.sv .sv-btn--light{background:var(--bone);color:var(--void)}
+.sv .sv-btn--ghost{border-color:var(--line-strong);color:var(--bone);background:rgba(5,5,5,.35)}
+.sv-btn:active{transform:scale(.98)}
+.sv-btn:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+@media(min-width:600px){.sv-btn{padding:0 26px;font-size:14px;letter-spacing:.2em}}
+@media(hover:hover){.sv-btn:hover{transform:translateY(-2px)}.sv .sv-btn--light:hover{background:var(--red);color:#fff;box-shadow:0 10px 40px -10px var(--red-dim)}.sv .sv-btn--ghost:hover{border-color:var(--red);color:#fff}}
+.sv-ctas{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(min-width:600px){.sv-ctas{display:flex;flex-wrap:wrap;gap:12px}}
+.sv-fog{position:absolute;inset:-20%;pointer-events:none;z-index:0;opacity:.5;filter:blur(30px);animation:sv-drift 28s ease-in-out infinite alternate;background:radial-gradient(40% 30% at 30% 40%,rgba(200,202,204,.1),transparent 70%),radial-gradient(35% 28% at 70% 60%,rgba(200,202,204,.08),transparent 70%)}
+@keyframes sv-drift{0%{transform:translate3d(-4%,0,0)}100%{transform:translate3d(4%,-2%,0)}}
+.sv--js .sv-rv{opacity:0;transform:translateY(20px);transition:opacity .9s,transform .9s}
+.sv--js .sv-rv.sv-in{opacity:1;transform:none}
+.sv-evidence{position:absolute;z-index:2;bottom:-12px;left:10px;margin:0;background:var(--bone);color:var(--void);font:400 12px/1.3 var(--type);padding:9px 12px;transform:rotate(-2deg);box-shadow:0 10px 24px rgba(0,0,0,.6);border-left:3px solid var(--red);text-transform:uppercase}
+.sv-dot{display:inline-block;flex:none;width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 10px var(--red);animation:sv-blink 1.4s infinite}
+@keyframes sv-blink{50%{opacity:.2}}
+/* announcement bar */
+.sv-bar{display:block;text-decoration:none;color:var(--white);font:700 12px/1 var(--cond);text-transform:uppercase}
+.sv .sv-bar{color:var(--white)}
+.sv-bar__top{position:relative;display:flex;align-items:center;justify-content:center;gap:12px;overflow:hidden;height:28px;padding:0 12px;background:linear-gradient(90deg,#9e141b 0%,var(--red) 25%,var(--red) 75%,#9e141b 100%);letter-spacing:.3em}
+.sv-bar__top i{flex:none;width:6px;height:6px;border:1px solid rgba(255,255,255,.9);transform:rotate(45deg)}
+.sv-bar__scan{position:absolute;top:0;bottom:0;left:-30%;width:24%;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,255,255,.32) 50%,transparent);animation:sv-scan 3.6s ease-in-out infinite}
+@keyframes sv-scan{0%{transform:translate(0)}55%,100%{transform:translate(620%)}}
+.sv-bar__bottom{display:flex;align-items:center;justify-content:center;gap:10px;min-height:34px;padding:6px 12px;background:var(--void);border-bottom:1px solid var(--line);font-size:13px;letter-spacing:.12em;text-align:center}
+.sv-bar__bottom b{color:var(--red)}
+.sv-bar__arrow{flex:none;color:var(--red);font-size:18px;line-height:0;animation:sv-nudge 1.6s ease-in-out infinite}
+@keyframes sv-nudge{50%{transform:translateX(3px)}}
+@media(hover:hover){.sv-bar:hover .sv-bar__offer{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:4px}}
+@media(min-width:760px){.sv-bar__top{height:30px;font-size:13px;letter-spacing:.4em}.sv-bar__bottom{min-height:40px;font-size:15px;letter-spacing:.2em}}
+/* collab lockup: SavTac logo x Sentinel text wordmark */
+.sv-collab{position:relative;z-index:2}
+.sv-collab__row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;max-width:620px;margin:0 auto}
+.sv-collab__st{display:flex;justify-content:flex-end}
+.sv-collab__st img{height:38px;width:auto}
+.sv-collab__x{position:relative;display:grid;place-items:center;width:28px;height:28px;font:400 11px/1 var(--display);color:#fff}
+.sv-collab__x::before{content:"";position:absolute;inset:0;border:1px solid var(--red);transform:rotate(45deg);box-shadow:0 0 18px -4px var(--red)}
+.sv-word{display:inline-flex;flex-direction:column;align-items:flex-start;line-height:1;color:var(--white);text-transform:uppercase}
+.sv-word b{font:400 16px/1 var(--display);letter-spacing:.1em;font-weight:400}
+.sv-word small{margin-top:5px;font:700 8px/1 var(--cond);letter-spacing:.58em;color:var(--red)}
+.sv-collab__label{display:flex;align-items:center;justify-content:center;gap:12px;max-width:620px;margin:16px auto 0;font:600 10px/1 var(--cond);letter-spacing:.38em;text-transform:uppercase;color:var(--fog)}
+.sv-collab__label::before,.sv-collab__label::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line-strong))}
+.sv-collab__label::after{transform:scaleX(-1)}
+@media(min-width:400px){.sv-collab__st img{height:44px}.sv-word b{font-size:19px}.sv-word small{font-size:9px}}
+@media(min-width:900px){.sv-collab__row{gap:28px;max-width:760px}.sv-collab__label{max-width:760px;margin-top:22px;font-size:11px}.sv-collab__st img{height:70px}.sv-word b{font-size:30px}.sv-word small{margin-top:8px;font-size:12px;letter-spacing:.74em}.sv-collab__x{width:44px;height:44px;font-size:15px}}
+/* buy module */
+.sv-buy{display:grid;background:var(--char);border:1px solid var(--line)}
+@media(min-width:860px){.sv-buy{grid-template-columns:1.05fr 1fr}.sv-buy--wide{grid-template-columns:1.35fr 1fr}}
+.sv-buy__media{position:relative;display:flex;flex-direction:column;background:var(--bone)}
+.sv-buy__stage{position:relative;aspect-ratio:4/5;overflow:hidden}
+.sv-buy__stage img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.sv-buy__tag{position:absolute;z-index:2;top:14px;left:14px;padding:8px 11px;background:var(--void);color:var(--bone);font:700 11px/1 var(--cond);letter-spacing:.22em;text-transform:uppercase}
+.sv-buy__give-tag{position:absolute;z-index:2;top:14px;right:14px;padding:8px 10px;background:var(--red);color:#fff;font:400 12px/1 var(--type);transform:rotate(3deg);box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.sv-buy__thumbs{display:flex;gap:8px;padding:0 14px 14px}
+.sv-buy__thumbs button{width:64px;padding:0;border:1px solid rgba(5,5,5,.18);background:transparent;cursor:pointer}
+.sv-buy__thumbs button.is-on{border-color:var(--red);box-shadow:0 0 0 1px var(--red)}
+.sv-buy__thumbs button:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.sv-buy__thumbs img{mix-blend-mode:multiply}
+.sv-buy__panel{display:flex;flex-direction:column;gap:16px;padding:24px 18px 26px}
+@media(min-width:900px){.sv-buy__panel{gap:18px;padding:40px 40px 42px}}
+.sv-buy__title{margin:0;font:400 clamp(18px,2.2vw,26px)/1.3 var(--display);text-transform:uppercase;color:var(--white)}
+.sv-buy__meta{display:flex;justify-content:space-between;align-items:center;font:500 13px/1 var(--cond);letter-spacing:.14em;text-transform:uppercase;color:var(--fog)}
+.sv-buy__price{font:400 24px/1 var(--display);letter-spacing:0;color:var(--white)}
+.sv-buy__give{margin:0;padding:12px 14px;border-left:3px solid var(--red);background:rgba(216,35,43,.08);color:var(--mist);font-size:15px}
+.sv-opt{margin:0;padding:0;border:0;min-width:0}
+.sv-opt legend{padding:0;margin:0 0 10px;font:600 12px/1 var(--cond);letter-spacing:.2em;text-transform:uppercase;color:var(--fog)}
+.sv-opt legend b{color:var(--white);font-weight:600}
+.sv-swatches{display:flex;flex-wrap:wrap;gap:8px}
+.sv-swatch,.sv-chip{position:relative;display:block;margin:0}
+.sv-swatch input,.sv-chip input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer;z-index:1}
+.sv-swatch{display:flex;align-items:center;gap:10px;min-height:44px;padding:6px 14px 6px 8px;border:1px solid var(--line-strong);background:rgba(5,5,5,.35)}
+.sv-swatch span{width:26px;height:26px;border-radius:50%;background:var(--sw);border:1px solid rgba(255,255,255,.35)}
+.sv-swatch em{font:600 13px/1 var(--cond);font-style:normal;letter-spacing:.16em;text-transform:uppercase;color:var(--mist)}
+.sv-swatch:has(input:checked){border-color:var(--bone)}
+.sv-swatch input:checked+span{box-shadow:0 0 0 2px var(--char),0 0 0 3px var(--red)}
+.sv-swatch input:checked~em{color:var(--white)}
+.sv-swatch input:focus-visible+span{outline:2px solid var(--red);outline-offset:4px}
+.sv-sizes{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.sv-chip span{display:flex;align-items:center;justify-content:center;min-height:44px;border:1px solid var(--line-strong);background:rgba(5,5,5,.35);font:600 14px/1 var(--cond);letter-spacing:.06em;color:var(--bone)}
+.sv-chip input:checked+span{background:var(--bone);border-color:var(--bone);color:var(--void)}
+.sv-chip input:focus-visible+span{outline:2px solid var(--red);outline-offset:2px}
+@media(hover:hover){.sv-chip input:not(:checked):hover+span{border-color:var(--red)}}
+.sv-need{animation:sv-shake .4s}
+.sv-need .sv-chip span{border-color:var(--red)}
+@keyframes sv-shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.sv-buy__go{width:100%}
+.sv-buy__go:not(.is-ready){opacity:.8}
+.sv-buy__hint{margin:-6px 0 0;color:#ff6b6b;font-size:13px}
+.sv-buy__hint:empty{display:none}
+.sv-buy__link{align-self:center;font:600 12px/1 var(--cond);letter-spacing:.2em;text-transform:uppercase;color:var(--fog);text-underline-offset:4px}
+@media(hover:hover){.sv-buy__link:hover{color:var(--white)}}
+/* facts row */
+.sv-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0 0;padding:18px 0 0;list-style:none;border-top:1px solid var(--line)}
+.sv-facts b{display:block;font:400 clamp(24px,7vw,40px)/1 var(--display);color:var(--white)}
+.sv-facts li:last-child b{color:var(--red)}
+.sv-facts span{display:block;margin-top:8px;font:600 11px/1.3 var(--cond);letter-spacing:.2em;text-transform:uppercase;color:var(--fog)}
+/* faq */
+.sv-faq{background:var(--char);border-top:1px solid var(--line)}
+.sv-faq__list{display:grid;gap:8px;max-width:880px}
+.sv-faq details{border:1px solid var(--line);background:var(--ink)}
+.sv-faq details[open]{border-color:var(--line-strong)}
+.sv-faq summary{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:58px;padding:14px 18px;list-style:none;cursor:pointer;font:600 16px/1.35 var(--body);color:var(--white)}
+.sv-faq summary::-webkit-details-marker{display:none}
+.sv-faq summary::after{content:"+";flex:none;font:400 18px/1 var(--display);color:var(--red);transition:transform .3s}
+.sv-faq details[open] summary::after{transform:rotate(45deg)}
+.sv-faq summary:focus-visible{outline:2px solid var(--red);outline-offset:-2px}
+.sv-faq details p{margin:0;padding:0 18px 18px;color:var(--mist)}
+/* final + fine print + sticky */
+.sv-final{position:relative;overflow:hidden;padding:84px 0;text-align:center;background:radial-gradient(60% 70% at 50% 0%,#1e1f20,var(--void) 70%)}
+.sv-final .sv-wrap{position:relative;z-index:1}
+.sv-final .sv-collab__row{margin-bottom:28px}
+.sv-final h2{max-width:900px;margin:16px auto;font-size:clamp(24px,6.4vw,56px)}
+.sv-final p{max-width:560px;margin:0 auto 28px;color:var(--mist)}
+.sv-final .sv-ctas{justify-content:center;max-width:560px;margin:0 auto}
+@media(min-width:600px){.sv-final .sv-ctas{max-width:none}}
+@media(min-width:900px){.sv-final{padding:140px 0}}
+.sv-fine{padding:36px 0 110px;background:var(--void);border-top:1px solid var(--line);font-size:13px;line-height:1.6;color:var(--fog)}
+.sv-fine p{max-width:900px;margin:0 0 8px}
+.sv-fine strong{color:var(--bone)}
+@media(min-width:900px){.sv-fine{padding-bottom:48px}}
+.sv-sticky{position:fixed;z-index:50;left:0;right:0;bottom:0;display:flex;align-items:center;gap:12px;padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom));background:rgba(5,5,5,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .35s}
+.sv-sticky.sv-show{transform:none}
+.sv-sticky__t{flex:1;display:flex;flex-direction:column;gap:4px;font:400 11px/1.2 var(--type);color:var(--fog)}
+.sv-sticky__t b{font:400 18px/1 var(--display);font-weight:400;color:var(--white)}
+.sv-sticky .sv-btn{flex:none;min-height:46px}
+@media(min-width:900px){.sv-sticky{display:none}}
+@media(prefers-reduced-motion:reduce){.sv *,.sv *::before,.sv *::after{animation:none!important;transition:none!important}.sv--js .sv-rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+.v3-hero{position:relative;background:var(--void)}
+.v3-hero__imgs{display:grid;grid-template-columns:1fr 1fr;height:min(80vh,780px);height:min(80svh,780px);min-height:440px}
+.v3-hero__imgs img{width:100%;height:100%;object-fit:cover}
+.v3-hero__imgs img:first-child{object-position:50% 25%}
+.v3-hero__imgs img:last-child{object-position:50% 30%}
+.v3-hero__shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,5,.78) 0%,rgba(5,5,5,0) 22%,rgba(5,5,5,.15) 38%,rgba(5,5,5,.82) 58%,rgba(5,5,5,.95) 78%,var(--void) 100%)}
+.v3-hero .sv-collab{position:absolute;top:0;left:0;right:0;padding:16px var(--gutter) 0}
+.v3-hero__copy{position:absolute;left:0;right:0;bottom:0;z-index:2;padding-bottom:34px;text-align:center}
+.v3-hero h1{margin:12px 0;font-size:clamp(24px,6.4vw,64px);text-shadow:0 2px 30px rgba(0,0,0,.85)}
+.v3-hero__sub{max-width:540px;margin:0 auto 20px;color:var(--mist)}
+.v3-hero__sub strong{color:var(--white);font-weight:600}
+.v3-hero .sv-ctas{justify-content:center;max-width:540px;margin:0 auto}
+@media(min-width:600px){.v3-hero .sv-ctas{max-width:none}}
+@media(min-width:900px){.v3-hero .sv-collab{padding-top:34px}.v3-hero__copy{padding-bottom:64px}.v3-hero__sub{font-size:19px}}
+.v3-gear{padding:56px 0 72px;background:var(--night)}
+@media(min-width:900px){.v3-gear{padding:96px 0}}
+.v3-gear__head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 16px;margin-bottom:22px}
+.sv-specs{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin:0;padding:0;list-style:none;background:var(--line);border:1px solid var(--line)}
+.sv-specs li{padding:12px 14px;background:var(--char);font-size:14px;color:var(--mist)}
+.sv-specs b{display:block;margin-bottom:4px;font:600 11px/1 var(--cond);letter-spacing:.2em;text-transform:uppercase;color:var(--fog)}
+.v3-band{position:relative;overflow:hidden;padding:72px 0;background:var(--red);color:#fff}
+.v3-band::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(135deg,rgba(0,0,0,.07) 0 2px,transparent 2px 14px)}
+.v3-band .sv-wrap{position:relative}
+.v3-band__kicker{font:400 12px/1 var(--type);letter-spacing:.06em;color:rgba(255,255,255,.85);text-transform:uppercase}
+.v3-band h2{margin:14px 0 18px;font-size:clamp(24px,6.4vw,64px);color:#fff}
+.v3-band__lede{max-width:680px;margin:0 0 30px;font-size:17px;color:rgba(255,255,255,.94)}
+.v3-band__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 26px;padding:22px 0 0;list-style:none;border-top:1px solid rgba(255,255,255,.4)}
+.v3-band__stats b{display:block;font:400 clamp(18px,4.6vw,52px)/1 var(--display);font-weight:400;color:transparent;-webkit-text-stroke:1.2px #fff}
+.v3-band__stats span{display:block;margin-top:8px;font:600 11px/1.3 var(--cond);letter-spacing:.16em;text-transform:uppercase}
+.v3-file{border:1px solid rgba(255,255,255,.45);background:rgba(5,5,5,.16)}
+.v3-file summary{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:56px;padding:14px 18px;list-style:none;cursor:pointer;font:700 13px/1.2 var(--cond);letter-spacing:.22em;text-transform:uppercase}
+.v3-file summary::-webkit-details-marker{display:none}
+.v3-file summary::after{content:"+";flex:none;font:400 18px/1 var(--display);transition:transform .3s}
+.v3-file[open] summary::after{transform:rotate(45deg)}
+.v3-file summary:focus-visible{outline:2px solid #fff;outline-offset:-4px}
+.v3-file__body{padding:4px 18px 20px}
+.v3-file__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;margin:0 0 18px;padding:0;list-style:none;background:rgba(255,255,255,.28)}
+.v3-file__grid li{padding:14px;background:#b81d24}
+.v3-file__grid b{display:block;font:400 22px/1 var(--display);font-weight:400}
+.v3-file__grid span{display:block;margin-top:6px;font:600 11px/1.3 var(--cond);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.88)}
+.v3-file__grid .is-note{font:400 14px/1.4 var(--type)}
+@media(min-width:760px){.v3-file__grid{grid-template-columns:repeat(4,1fr)}}
+.v3-file__body p{margin:0 0 10px;font-size:15px;color:rgba(255,255,255,.94)}
+.v3-band .sv-ctas{margin-top:26px}
+.v3-band .sv-btn--light{background:#fff}
+@media(hover:hover){.v3-band .sv-btn--light:hover{background:var(--void);color:#fff;box-shadow:none}}
+.v3-ed__grid{display:grid;gap:12px}
+@media(min-width:900px){.v3-ed__grid{grid-template-columns:7fr 5fr;gap:20px}}
+.v3-ed__art{position:relative;margin:0;background:#fff}
+.v3-ed__art img{width:100%;aspect-ratio:1;object-fit:contain}
+.v3-ed__side{display:grid;gap:12px;align-content:start}
+@media(min-width:900px){.v3-ed__side{gap:20px}}
+.v3-ed__copy{padding:26px 22px;background:var(--char);border:1px solid var(--line)}
+.v3-ed__copy h2{margin:12px 0 14px;font-size:clamp(22px,3vw,32px)}
+.v3-ed__copy p{margin:0;color:var(--mist)}
+.v3-ed__pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(min-width:900px){.v3-ed__pair{gap:20px}}
+.v3-ed__pair figure{position:relative;margin:0;background:var(--bone)}
+.v3-ed__pair img{width:100%;aspect-ratio:4/5;object-fit:contain;mix-blend-mode:multiply}
+.v3-ed__pair figcaption{position:absolute;left:8px;bottom:8px;padding:5px 8px;background:var(--void);font:400 11px/1 var(--type);color:var(--bone)}
+.v3-final{padding:72px 0}
+@media(min-width:900px){.v3-final{padding:110px 0}}
+
+@media(max-width:599px){.sv .sv-bar__top{font-size:11px;letter-spacing:.14em;gap:8px;white-space:nowrap}.sv .sv-bar__bottom{font-size:12px;letter-spacing:.08em;padding-bottom:9px}}
+/* logos: real Sentinel vector logo replaces the text wordmark */
+.sv .lg-d{display:none}
+.sv-word img{height:32px;width:auto}
+@media(min-width:400px){.sv-word img{height:38px}}
+@media(min-width:900px){.sv-word img{height:60px}}
+
+/* .2 theme: Sentinel Foundation counter-trafficking page look. Pale blue, rounded cards, Anton + Lato, teal/lime/orange */
+body{background:#F7FAFB}
+.sv{--navy:#061923;--teal:#4EAAC2;--deep:#007C96;--lime:#C6D855;--orange:#D96539;--void:#061923;--night:#F7FAFB;--ink:#fff;--char:#EEF6F8;--graphite:#dde8ec;--steel:#9fb0b7;--smoke:#6b7b82;--fog:#55656c;--mist:#34444C;--bone:#22323a;--white:#061923;--red:#4EAAC2;--red-dim:rgba(78,170,194,.4);--line:rgba(6,25,35,.09);--line-strong:rgba(6,25,35,.22);--display:"Anton",Impact,sans-serif;--body:"Lato",system-ui,sans-serif;--cond:"Lato",system-ui,sans-serif;--type:"Lato",system-ui,sans-serif;letter-spacing:.01em}
+.sv .lg-l{display:none}.sv .lg-d{display:block}
+.sv-final .lg-l{display:block}.sv-final .lg-d{display:none}
+.sv-collab__st img{height:24px;width:auto}
+@media(min-width:400px){.sv-collab__st img{height:28px}}
+@media(min-width:900px){.sv-collab__st img{height:46px}}
+.sv-fog,.sv-stamp,.sv-bar__scan{display:none}
+.sv-h{letter-spacing:.08em;line-height:1.1}
+.sv-h em{color:var(--teal)}
+.sv-eyebrow{color:var(--deep);font-weight:700;letter-spacing:.2em}
+.sv-eyebrow::before{width:42px;height:3px;background:linear-gradient(90deg,#4EAAC2 0 33.3%,#C6D855 0 66.6%,#D96539 0)}
+.sv-file{color:var(--deep);font-weight:700;letter-spacing:.18em}
+.sv-file b{color:var(--lime)}
+.sv-sec-head p{color:var(--mist);font-weight:300;font-size:17px}
+.sv-btn{border-radius:999px;font-family:"Poppins",sans-serif;font-weight:600;letter-spacing:.1em;font-size:12px}
+@media(min-width:600px){.sv-btn{font-size:13px;letter-spacing:.14em}}
+.sv .sv-btn--light{background:var(--teal);color:var(--navy)}
+.sv .sv-btn--light::after{content:"\2192";margin-left:.55em}
+.sv .sv-btn--ghost{background:#fff;border-color:rgba(6,25,35,.18);color:var(--navy)}
+.sv-btn:focus-visible{outline-color:var(--deep)}
+@media(hover:hover){.sv .sv-btn--light:hover{background:var(--navy);color:#fff;box-shadow:0 12px 30px -12px rgba(6,25,35,.55)}.sv .sv-btn--ghost:hover{border-color:var(--teal);color:var(--navy)}}
+/* bar */
+.sv .sv-bar,.sv-bar__top{color:#fff}
+.sv-bar__top{background:var(--navy);font-family:"Poppins",sans-serif;font-weight:600}
+.sv-bar__top i{border-color:var(--lime)}
+.sv-bar__bottom{background:#fff;color:var(--navy);border-bottom:0;box-shadow:inset 0 -3px 0 0 transparent;position:relative}
+.sv-bar__bottom::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,#4EAAC2 0 33.3%,#C6D855 0 66.6%,#D96539 0)}
+.sv-bar__bottom b,.sv-bar__arrow{color:var(--deep)}
+.sv-dot{background:var(--orange);box-shadow:0 0 10px rgba(217,101,57,.7)}
+/* collab lockup */
+.sv-collab__x{color:var(--navy);font-family:"Poppins",sans-serif}
+.sv-collab__x::before{border-color:var(--teal);box-shadow:none;border-radius:50%;transform:none}
+/* buy module */
+.sv-buy{background:#fff;border:0;border-radius:24px;overflow:hidden;box-shadow:0 30px 70px -36px rgba(6,25,35,.45)}
+.sv-buy__media{background:#EFF4F6}
+.sv-buy__tag{background:var(--navy);border-radius:999px;font-family:"Poppins",sans-serif;font-weight:600;color:#fff}
+.sv-buy__give-tag{background:var(--lime);color:var(--navy);transform:none;border-radius:999px;font:700 11px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;box-shadow:none}
+.sv-buy__thumbs button{border-radius:10px;overflow:hidden;background:#fff}
+.sv-buy__thumbs button.is-on{border-color:var(--teal);box-shadow:0 0 0 1px var(--teal)}
+.sv-buy__title,.sv-buy__price{letter-spacing:.06em}
+.sv-buy__give{background:#F3F8E9;border-left-color:var(--lime);color:var(--mist);border-radius:0 12px 12px 0}
+.sv-opt legend{color:var(--deep);font-weight:700}
+.sv-swatch{background:#fff;border-radius:999px}
+.sv-swatch:has(input:checked){border-color:var(--navy)}
+.sv-swatch span{border-color:rgba(6,25,35,.2)}
+.sv-swatch input:checked+span{box-shadow:0 0 0 2px #fff,0 0 0 3px var(--teal)}
+.sv-chip span{background:#fff;border-radius:12px;color:var(--navy);font-weight:700}
+.sv-chip input:checked+span{background:var(--navy);border-color:var(--navy);color:#fff}
+.sv-need .sv-chip span{border-color:var(--orange)}
+.sv-buy__hint{color:var(--orange)}
+.sv-buy__link{color:var(--deep)}
+.sv-facts span,.sv-stack__num small{color:var(--fog)}
+/* faq */
+.sv-faq{background:#EEF6F8;border-top:0}
+.sv-faq details{background:#fff;border:0;border-radius:16px;box-shadow:0 14px 34px -26px rgba(6,25,35,.5)}
+.sv-faq summary{font-weight:700;color:var(--navy)}
+.sv-faq summary::after{color:var(--teal)}
+/* dark navy sections */
+.sv-final,.v3-band,.sv-marquee{--white:#fff;--bone:#EEF6F8;--mist:#c9d6db;--fog:#9fb0b7;--red:#C6D855;--line:rgba(238,246,248,.12);--line-strong:rgba(238,246,248,.3)}
+.sv-final{background:var(--navy);color:#EEF6F8}
+.sv-final::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,#4EAAC2 0 33.3%,#C6D855 0 66.6%,#D96539 0)}
+.sv-final .sv-btn--ghost{background:transparent;border-color:rgba(255,255,255,.4);color:#fff}
+.sv-final .sv-collab__x{color:#fff}
+.sv-final .sv-eyebrow{color:var(--teal)}
+.sv-fine{background:#fff;border-top:1px solid var(--line);color:var(--fog)}
+.sv-fine strong{color:var(--navy)}
+.sv-sticky{background:rgba(255,255,255,.96);border-top:1px solid var(--line);box-shadow:0 -10px 30px -20px rgba(6,25,35,.4)}
+.sv-lb::backdrop{background:rgba(6,25,35,.92)}
+.sv-lb button{border-radius:50%;background:var(--navy);border-color:rgba(255,255,255,.3)}
+.sv .sv-lb img{border-radius:16px}
+.sv-lb__count{color:#c9d6db}
+/* evidence chips, gallery, timeline */
+.sv-evidence{background:#fff;color:var(--navy);transform:none;border-left:3px solid var(--teal);border-radius:10px;font:700 11px/1.3 var(--body);letter-spacing:.14em;box-shadow:0 12px 30px -16px rgba(6,25,35,.45)}
+.sv-gallery button{border:0;border-radius:18px;box-shadow:0 18px 40px -28px rgba(6,25,35,.55)}
+.sv-gallery button::after{background:var(--navy);color:#fff;border-radius:999px;font:700 10px/1 var(--body);letter-spacing:.14em;padding:6px 10px}
+.sv-gallery button:focus-visible{outline-color:var(--deep)}
+.sv-hint{color:var(--smoke);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:11px}
+.sv-timeline{background:#fff;border:0}
+.sv-tl::before{background:linear-gradient(var(--teal),var(--lime),var(--orange))}
+.sv-tl i{background:#fff;border-color:var(--teal)}
+.sv-tl li:last-child i{border-color:var(--orange);background:var(--orange);box-shadow:none}
+@media(min-width:900px){.sv-tl::before{background:linear-gradient(90deg,#4EAAC2 0 33.3%,#C6D855 0 66.6%,#D96539 0)}}
+/* briefing (v1) */
+.sv-paper{background:#fff}
+.sv-paper .sv-file{color:var(--deep)}
+.sv-paper .sv-sec-head p,.sv-paper__note{color:var(--mist)}
+.sv-paper__note{font:italic 400 15px/1.5 var(--body)}
+.sv-step{background:#F7FAFB;border:0;border-top:4px solid var(--teal);border-radius:18px;box-shadow:0 22px 44px -30px rgba(6,25,35,.5);transform:none!important}
+.sv-step:nth-child(2){border-top-color:var(--lime)}.sv-step:nth-child(3){border-top-color:var(--orange)}
+.sv-step::before{display:none}
+.sv-step__no{color:var(--deep);font-weight:700;letter-spacing:.14em}
+.sv-step h3{letter-spacing:.06em}
+.sv-step p{color:var(--mist)}
+.sv-redact{background:var(--navy)}
+.sv-redact:hover,.sv-redact:focus,.sv-redact.sv-show{color:var(--deep)}
+
+.v3-hero{max-width:1240px;margin:16px 12px 0;border-radius:22px;overflow:hidden;box-shadow:0 26px 60px -34px rgba(6,25,35,.5)}
+@media(min-width:1264px){.v3-hero{margin:28px auto 0}}
+.v3-hero__shade{background:linear-gradient(180deg,rgba(247,250,251,.92) 0%,rgba(247,250,251,0) 20%,rgba(247,250,251,0) 36%,rgba(247,250,251,.88) 56%,#F7FAFB 76%)}
+.v3-hero h1{text-shadow:none}
+.v3-hero__sub{color:var(--mist)}
+.v3-gear{background:#F7FAFB}
+.sv-specs{background:transparent;border:0;gap:8px}
+.sv-specs li{background:#fff;border-radius:12px;color:var(--mist)}
+.sv-specs b{color:var(--deep);font-weight:700}
+.v3-band{background:var(--navy)}
+.v3-band::before{background:linear-gradient(90deg,#4EAAC2 0 33.3%,#C6D855 0 66.6%,#D96539 0);top:0;bottom:auto;height:4px}
+.v3-band__kicker{color:var(--teal);font-weight:700;letter-spacing:.18em}
+.v3-band__stats b{color:var(--lime);-webkit-text-stroke:0;letter-spacing:.04em}
+.v3-band__stats span{color:#c9d6db}
+.v3-file{border-color:rgba(255,255,255,.2);border-radius:18px;background:rgba(255,255,255,.04);overflow:hidden}
+.v3-file summary{font-family:"Poppins",sans-serif;font-weight:600}
+.v3-file__grid{background:transparent;gap:8px}
+.v3-file__grid li{background:rgba(255,255,255,.07);border-radius:12px}
+.v3-file__grid b{color:var(--lime);letter-spacing:.04em}
+.v3-band .sv-btn--light{background:var(--teal)}
+.v3-band .sv-btn--ghost{background:transparent;border-color:rgba(255,255,255,.4);color:#fff}
+@media(hover:hover){.v3-band .sv-btn--light:hover{background:#fff;color:var(--navy)}}
+.v3-ed__art{border-radius:22px;overflow:hidden}
+.v3-ed__copy{background:#fff;border:0;border-radius:20px;box-shadow:0 18px 40px -30px rgba(6,25,35,.5)}
+.v3-ed__pair figure{background:#EFF4F6;border-radius:18px;overflow:hidden}
+.v3-ed__pair figcaption{background:var(--navy);color:#fff;border-radius:999px;font:700 10px/1 var(--body);letter-spacing:.14em;padding:6px 10px}
+</style>
+<style>@media(max-width:899px){.sv-buy__link{display:inline-flex;align-items:center;min-height:44px}}</style>
+</head>
+<body>
+<div class="sv">
+<script>document.currentScript.parentElement.classList.add('sv--js')</script>
+<a class="sv-bar" href="#sv-gear">
+  <span class="sv-bar__top"><span class="sv-bar__scan" aria-hidden="true"></span><i aria-hidden="true"></i>Sentinel Foundation X SavTac<i aria-hidden="true"></i></span>
+  <span class="sv-bar__bottom"><span class="sv-dot" aria-hidden="true"></span><span class="sv-bar__offer">$34.99 &middot; A portion goes to <b>Sentinel Foundation</b></span><span class="sv-bar__arrow" aria-hidden="true">&rsaquo;</span></span>
+</a>
+<section class="v3-hero" aria-labelledby="v3-hero-title">
+  <div class="v3-hero__imgs">
+    <img src="https://cdn.shopify.com/s/files/1/1730/9811/files/Sentinel_Foundation_Tactical_Vigilante.png?v=1794615680&amp;width=1200" alt="Collab tee in Black, back print, worn" width="1254" height="1254" fetchpriority="high">
+    <img src="https://cdn.shopify.com/s/files/1/1730/9811/files/Sentinel_Foundation_Tactical_Patrol.png?v=1794615825&amp;width=1200" alt="Collab tee in OD Green, back print, worn" width="1128" height="1394">
+  </div>
+  <div class="v3-hero__shade" aria-hidden="true"></div>
+  <div class="sv-collab">
+  <div class="sv-collab__row">
+    <div class="sv-collab__st"><img class="lg-l" src="assets/savtac-logo-white.png" alt="Savage Tacticians" width="480" height="103"><img class="lg-d" src="assets/savtac-logo-dark.png" alt="Savage Tacticians" width="480" height="103"></div>
+    <div class="sv-collab__x" role="img" aria-label="in collaboration with">&times;</div>
+    <div class="sv-word"><img class="lg-l" src="assets/sentinel-logo-white.svg" alt="Sentinel Foundation" width="459" height="151"><img class="lg-d" src="assets/sentinel-logo-navy.svg" alt="Sentinel Foundation" width="459" height="151"></div>
+  </div>
+</div>
+  <div class="v3-hero__copy">
+    <div class="sv-wrap">
+      <span class="sv-eyebrow">New collab &middot; $34.99</span>
+      <h1 id="v3-hero-title" class="sv-h">The collab tee.<br><em>For the mission.</em></h1>
+      <p class="v3-hero__sub">Black or OD Green. <strong>A portion of every shirt goes to Sentinel Foundation.</strong></p>
+      <div class="sv-ctas" data-hero>
+        <a class="sv-btn sv-btn--light" href="#sv-gear" data-pick="black">Buy black</a>
+        <a class="sv-btn sv-btn--ghost" href="#sv-gear" data-pick="green">Buy OD green</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="v3-gear" id="sv-gear" aria-labelledby="v3-gear-title">
+  <div class="sv-wrap">
+    <div class="v3-gear__head">
+      <h2 id="v3-gear-title" class="sv-file"><b>&#9679;</b> Pick your color and size</h2>
+      <span class="sv-file">Sold at sav-tac.com</span>
+    </div>
+    <div class="sv-buy sv-buy--wide" data-buy>
+  <div class="sv-buy__media">
+    <div class="sv-buy__stage">
+      <span class="sv-buy__tag">Graphic tee</span>
+      <span class="sv-buy__give-tag">For the mission</span>
+      <img data-main src="https://cdn.shopify.com/s/files/1/1730/9811/files/Sb2.jpg?v=1794615437&amp;width=1000" alt="Sentinel Foundation X SavTac tee in Black, back" width="1200" height="1528">
+    </div>
+    <div class="sv-buy__thumbs">
+      <button type="button" data-thumb="back" class="is-on" aria-label="Show back"><img src="https://cdn.shopify.com/s/files/1/1730/9811/files/Sb2.jpg?v=1794615437&amp;width=200" alt="" width="200" height="255" loading="lazy"></button>
+      <button type="button" data-thumb="front" aria-label="Show front"><img src="https://cdn.shopify.com/s/files/1/1730/9811/files/Sb1.jpg?v=1794615437&amp;width=200" alt="" width="200" height="259" loading="lazy"></button>
+    </div>
+  </div>
+  <div class="sv-buy__panel">
+    <div class="sv-file"><b>&#9679;</b> The collab tee</div>
+    <h3 class="sv-buy__title">Sentinel Foundation X SavTac</h3>
+    <div class="sv-buy__meta"><span>Graphic tee</span><span class="sv-buy__price">$34.99</span></div>
+    <p class="sv-buy__give">A portion of the proceeds from every shirt goes to Sentinel Foundation.</p>
+    <fieldset class="sv-opt">
+      <legend>Color: <b data-color-name>Black</b></legend>
+      <div class="sv-swatches">
+        <label class="sv-swatch"><input type="radio" name="v3buy-color" value="black" checked data-color><span style="--sw:#111214"></span><em>Black</em></label>
+        <label class="sv-swatch"><input type="radio" name="v3buy-color" value="green" data-color><span style="--sw:#7a7552"></span><em>OD Green</em></label>
+      </div>
+    </fieldset>
+    <fieldset class="sv-opt" data-sizes>
+      <legend>Select size</legend>
+      <div class="sv-sizes"><label class="sv-chip"><input type="radio" name="v3buy-size" value="S" data-size><span>S</span></label><label class="sv-chip"><input type="radio" name="v3buy-size" value="M" data-size><span>M</span></label><label class="sv-chip"><input type="radio" name="v3buy-size" value="L" data-size><span>L</span></label><label class="sv-chip"><input type="radio" name="v3buy-size" value="XL" data-size><span>XL</span></label><label class="sv-chip"><input type="radio" name="v3buy-size" value="2XL" data-size><span>2XL</span></label><label class="sv-chip"><input type="radio" name="v3buy-size" value="3XL" data-size><span>3XL</span></label></div>
+    </fieldset>
+    <a class="sv-btn sv-btn--light sv-buy__go" href="https://sav-tac.com/products/sentinel-foundation-x-savtac" data-go>Select a size</a>
+    <p class="sv-buy__hint" data-hint aria-live="polite"></p>
+    <ul class="sv-specs">
+      <li><b>Style</b>Graphic tee</li>
+      <li><b>Sizes</b>S to 3XL</li>
+      <li><b>Colors</b>Black, OD Green</li>
+      <li><b>Print</b>Chest emblem, full back</li>
+    </ul>
+    <a class="sv-buy__link" href="https://sav-tac.com/products/sentinel-foundation-x-savtac">View product page</a>
+  </div>
+</div>
+  </div>
+</section>
+<section class="v3-band" aria-labelledby="v3-band-title">
+  <div class="sv-wrap">
+    <div class="v3-band__kicker">&#9679; The mission behind the shirt</div>
+    <h2 id="v3-band-title" class="sv-h sv-rv">Predators should fear the dark too.</h2>
+    <p class="v3-band__lede sv-rv">For every collab shirt sold, we donate a portion of the proceeds to help fuel Sentinel Foundation's mission. Sentinel works counter-trafficking, crisis response and intelligence support alongside law enforcement and trusted partners.</p>
+    <ul class="v3-band__stats sv-rv"><li><b>165</b><span>Children safeguarded or recovered, 2025</span></li><li><b>680+</b><span>Cases worked, 2025</span></li><li><b>9</b><span>Countries impacted, 2025</span></li></ul>
+    <details class="v3-file sv-rv">
+      <summary>Open the full file</summary>
+      <div class="v3-file__body">
+        <ul class="v3-file__grid"><li><b>15+</b><span>Training and operational courses, 2025</span></li><li><b>165</b><span>Children safeguarded or recovered, 2025</span></li><li><b>680+</b><span>Cases worked, 2025</span></li><li><b>9</b><span>Countries impacted, 2025</span></li><li><b>150+</b><span>Law enforcement and partners trained, 2025</span></li><li><b>219</b><span>Arrests, direct and partner operations, 2025</span></li><li><b>200+</b><span>Children supported through aftercare, cumulative</span></li><li class="is-note">Source: Sentinel Foundation 2025 Annual Report.</li></ul>
+        <p>Their intelligence, field and technical teams have supported rescues, assisted in trafficker arrests, trained law enforcement and partners, and in 2025 alone worked 680+ cases across 9 countries.</p>
+        <p>These figures come from Sentinel Foundation's 2025 Annual Report, published on their website.</p>
+      </div>
+    </details>
+    <div class="sv-ctas">
+      <a class="sv-btn sv-btn--light" href="#sv-gear">Get the shirt</a>
+    </div>
+  </div>
+</section>
+<section class="sv-sec" aria-labelledby="v3-ed-title">
+  <div class="sv-wrap">
+    <div class="v3-ed__grid">
+      <figure class="v3-ed__art sv-rv"><img src="https://cdn.shopify.com/s/files/1/1730/9811/files/SF_1.jpg?v=1794615519&amp;width=1200" alt="Sentinel Foundation collab artwork: Predators should fear the dark too" width="1200" height="1201" loading="lazy">
+        <figcaption class="sv-evidence">The back print</figcaption>
+      </figure>
+      <div class="v3-ed__side">
+        <div class="v3-ed__copy sv-rv">
+          <div class="sv-file"><b>&#9679;</b> The art</div>
+          <h2 id="v3-ed-title" class="sv-h">Made to be worn. <em>Made to be asked about.</em></h2>
+          <p>Full Sentinel Foundation print on the back, small emblem on the chest. When someone asks, tell them where the money goes.</p>
+        </div>
+        <div class="v3-ed__pair">
+          <figure class="sv-rv"><img src="https://cdn.shopify.com/s/files/1/1730/9811/files/Sb1.jpg?v=1794615437&amp;width=600" alt="Black tee, front" width="1200" height="1554" loading="lazy"><figcaption>Black, front</figcaption></figure>
+          <figure class="sv-rv"><img src="https://cdn.shopify.com/s/files/1/1730/9811/files/Sg1.jpg?v=1794615446&amp;width=600" alt="OD Green tee, front" width="1200" height="1554" loading="lazy"><figcaption>OD Green, front</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="sv-sec sv-faq" aria-labelledby="sv-faq-title">
+  <div class="sv-wrap">
+    <div class="sv-sec-head sv-rv">
+      <div>
+        <div class="sv-file"><b>&#9679;</b> Quick answers</div>
+        <h2 id="sv-faq-title" class="sv-h">Questions, answered</h2>
+      </div>
+      <p>What you need to know before you gear up.</p>
+    </div>
+    <div class="sv-faq__list"><details class="sv-rv"><summary>Where does the money go?</summary><p>For every collab shirt sold, we donate a portion of the proceeds to help fuel Sentinel Foundation's mission.</p></details><details class="sv-rv"><summary>Who is Sentinel Foundation?</summary><p>Sentinel Foundation has grown from a small, specialized team into an established operational partner in counter-trafficking, crisis response and intelligence support.</p></details><details class="sv-rv"><summary>What sizes and colors are there?</summary><p>Sizes S through 3XL, in Black or OD Green. $34.99.</p></details><details class="sv-rv"><summary>What's on the shirt?</summary><p>A small emblem on the front chest and the full Sentinel Foundation print across the back: “Predators should fear the dark too.”</p></details></div>
+  </div>
+</section>
+<section class="sv-final v3-final" aria-labelledby="v3-final-title" data-final>
+  <div class="sv-wrap">
+    <span class="sv-eyebrow">Sentinel Foundation X SavTac</span>
+    <h2 id="v3-final-title" class="sv-h sv-rv">$34.99. <em>For the mission.</em></h2>
+    <p class="sv-rv">Black or OD Green, S to 3XL. A portion of every shirt sold goes to Sentinel Foundation.</p>
+    <div class="sv-ctas">
+      <a class="sv-btn sv-btn--light" href="#sv-gear">Pick your size</a>
+      <a class="sv-btn sv-btn--ghost" href="https://sav-tac.com/products/sentinel-foundation-x-savtac">Product page</a>
+    </div>
+  </div>
+</section>
+<section class="sv-fine" aria-label="Fine print">
+  <div class="sv-wrap">
+    <p><strong>The fine print.</strong> For every collab shirt sold, we donate a portion of the proceeds to help fuel Sentinel Foundation's mission.</p>
+    <p>Sentinel Foundation figures are from Sentinel Foundation's 2025 Annual Report, published at foundationsentinel.org.</p>
+  </div>
+</section>
+<div class="sv-sticky">
+  <div class="sv-sticky__t"><span>$34.99 &middot; For the mission</span><b>$34.99</b></div>
+  <a class="sv-btn sv-btn--light" href="#sv-gear">Buy the shirt</a>
+</div>
+</div>
+<script>
+(function(){
+  'use strict';
+  var root = document.querySelector('.sv');
+  if (!root) return;
+  var CDN = 'https://cdn.shopify.com/s/files/1/1730/9811/files/';
+  var IMG = {
+    black: { label: 'Black', back: CDN + 'Sb2.jpg?v=1794615437', front: CDN + 'Sb1.jpg?v=1794615437' },
+    green: { label: 'OD Green', back: CDN + 'Sg2.jpg?v=1794615446', front: CDN + 'Sg1.jpg?v=1794615446' }
+  };
+
+  /* ---------- Buy module: color swaps photos, size unlocks the buy link ---------- */
+  var buys = root.querySelectorAll('[data-buy]');
+  buys.forEach(function(b){
+    var main = b.querySelector('[data-main]');
+    var go = b.querySelector('[data-go]');
+    var hint = b.querySelector('[data-hint]');
+    var sizeBox = b.querySelector('[data-sizes]');
+    var colorName = b.querySelector('[data-color-name]');
+    var thumbs = b.querySelectorAll('[data-thumb]');
+    var st = { color: 'black', view: 'back', size: '' };
+    function render(){
+      var c = IMG[st.color];
+      main.src = c[st.view] + '&width=1000';
+      main.alt = 'Sentinel Foundation X SavTac tee in ' + c.label + ', ' + st.view;
+      thumbs.forEach(function(t){
+        var v = t.getAttribute('data-thumb');
+        t.querySelector('img').src = c[v] + '&width=200';
+        t.classList.toggle('is-on', v === st.view);
+        t.setAttribute('aria-pressed', v === st.view ? 'true' : 'false');
+      });
+      colorName.textContent = c.label;
+      go.textContent = st.size ? 'Buy now \u00b7 ' + c.label + ' / ' + st.size : 'Select a size';
+      go.classList.toggle('is-ready', !!st.size);
+      if (st.size) hint.textContent = '';
+    }
+    b.addEventListener('change', function(e){
+      var t = e.target;
+      if (t.hasAttribute('data-color')) st.color = t.value;
+      if (t.hasAttribute('data-size')) st.size = t.value;
+      render();
+    });
+    thumbs.forEach(function(t){
+      t.addEventListener('click', function(){ st.view = t.getAttribute('data-thumb'); render(); });
+    });
+    go.addEventListener('click', function(e){
+      if (st.size) return;
+      e.preventDefault();
+      sizeBox.classList.remove('sv-need');
+      void sizeBox.offsetWidth;
+      sizeBox.classList.add('sv-need');
+      hint.textContent = 'Pick a size first.';
+      var first = sizeBox.querySelector('input');
+      if (first) first.focus();
+    });
+    b.svPick = function(color){
+      var r = b.querySelector('[data-color][value="' + color + '"]');
+      if (!r) return;
+      r.checked = true; st.color = color; render();
+    };
+    render();
+  });
+  /* Hero links like "Shop OD green" preselect the color in the first buy module */
+  root.querySelectorAll('[data-pick]').forEach(function(a){
+    a.addEventListener('click', function(){ if (buys[0]) buys[0].svPick(a.getAttribute('data-pick')); });
+  });
+
+  /* ---------- Redacted word: tap or Enter to reveal ---------- */
+  root.querySelectorAll('.sv-redact').forEach(function(r){
+    function toggle(){ r.classList.toggle('sv-show'); }
+    r.addEventListener('click', toggle);
+    r.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); } });
+  });
+
+  /* ---------- Gallery lightbox (native <dialog>) ---------- */
+  var lb = root.querySelector('.sv-lb');
+  var tiles = Array.prototype.slice.call(root.querySelectorAll('[data-gallery] button'));
+  if (lb && tiles.length && typeof lb.showModal === 'function'){
+    var lbImg = lb.querySelector('img'), lbCount = lb.querySelector('.sv-lb__count'), cur = 0;
+    var show = function(i){
+      cur = (i + tiles.length) % tiles.length;
+      lbImg.src = tiles[cur].getAttribute('data-full');
+      lbImg.alt = tiles[cur].querySelector('img').alt;
+      lbCount.textContent = (cur + 1) + ' / ' + tiles.length;
+    };
+    tiles.forEach(function(t, i){
+      t.setAttribute('aria-label', 'Enlarge ' + t.getAttribute('data-label').toLowerCase());
+      t.addEventListener('click', function(){ show(i); lb.showModal(); });
+    });
+    lb.querySelector('.sv-lb__close').addEventListener('click', function(){ lb.close(); });
+    lb.querySelector('.sv-lb__prev').addEventListener('click', function(){ show(cur - 1); });
+    lb.querySelector('.sv-lb__next').addEventListener('click', function(){ show(cur + 1); });
+    lb.addEventListener('click', function(e){ if (e.target === lb) lb.close(); });
+    lb.addEventListener('keydown', function(e){
+      if (e.key === 'ArrowLeft') show(cur - 1);
+      else if (e.key === 'ArrowRight') show(cur + 1);
+    });
+    var touchX = null;
+    lb.addEventListener('touchstart', function(e){ touchX = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', function(e){
+      if (touchX === null) return;
+      var dx = e.changedTouches[0].clientX - touchX; touchX = null;
+      if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1));
+    });
+  }
+
+  /* ---------- Count-up numbers (real value stays in the HTML if JS or IO is missing) ---------- */
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var counters = root.querySelectorAll('[data-count]');
+  function countUp(el){
+    var end = Number(el.getAttribute('data-count')), suf = el.getAttribute('data-suffix') || '', t0 = null;
+    function step(t){
+      if (t0 === null) t0 = t;
+      var p = Math.min(1, (t - t0) / 1600);
+      p = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(end * p).toLocaleString('en-US') + suf;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* ---------- Scroll reveal, count-up trigger, mobile sticky bar ---------- */
+  var reveal = root.querySelectorAll('.sv-rv');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('sv-in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    reveal.forEach(function(el){ io.observe(el); });
+    if (!reduce && counters.length){
+      var co = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if (e.isIntersecting){ countUp(e.target); co.unobserve(e.target); } });
+      }, { threshold: 0.4 });
+      counters.forEach(function(el){ el.textContent = '0' + (el.getAttribute('data-suffix') || ''); co.observe(el); });
+    }
+    var sticky = root.querySelector('.sv-sticky'), hero = root.querySelector('[data-hero]'), fin = root.querySelector('[data-final]');
+    if (sticky && hero && fin){
+      var pastHero = false, atFinal = false;
+      var upd = function(){ sticky.classList.toggle('sv-show', pastHero && !atFinal); };
+      new IntersectionObserver(function(en){ pastHero = !en[0].isIntersecting && en[0].boundingClientRect.top < 0; upd(); }).observe(hero);
+      new IntersectionObserver(function(en){ atFinal = en[0].isIntersecting; upd(); }).observe(fin);
+    }
+  } else {
+    reveal.forEach(function(el){ el.classList.add('sv-in'); });
+  }
+})();
+</script>
+</body>
+</html>
