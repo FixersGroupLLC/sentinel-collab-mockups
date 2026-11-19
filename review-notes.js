@@ -4,7 +4,7 @@
    Attach:  <script src="review-notes.js" data-page="pdp-v1"
               data-supabase-url="https://xxxx.supabase.co" data-supabase-key="sb_publishable_..."></script>
    Reviewer link:  page.html?r=<token>   (token from schema.sql; one token = one page's notes)
-   No supabase attrs or no ?r= token -> notes live in this browser only, with Export to send them. */
+   No supabase attrs or no ?r= token -> notes live in this browser only, with Email notes (mailto dillon@sav-tac.com, override with data-email) to send them. */
 (() => {
   const me = document.currentScript, cfg = me.dataset;
   const page = cfg.page || location.pathname;
@@ -52,7 +52,7 @@
   // ---- UI ----
   const css = `
   .rn-ui{font:14px/1.4 system-ui,sans-serif;color:#111;position:relative;z-index:2147483000}
-  .rn-btn{position:fixed;right:0;top:50%;transform:translateY(-50%);max-width:120px;padding:10px 12px;border:0;border-radius:22px 0 0 22px;background:#111;color:#fff;cursor:pointer;box-shadow:0 2px 8px #0004}
+  .rn-btn{position:fixed;right:8px;top:50%;transform:translateY(-50%);max-width:120px;min-height:44px;padding:10px 14px;border:0;border-radius:22px;background:#111;color:#fff;cursor:pointer;box-shadow:0 2px 8px #0004}
   .rn-btn.on{background:#d33}
   .rn-pin{position:fixed;width:24px;height:24px;margin:-12px 0 0 -12px;border-radius:50%;background:#d33;color:#fff;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 0 0 2px #fff,0 2px 6px #0006}
   .rn-pin.done{background:#2a8a3e}
@@ -99,10 +99,11 @@
     btn.classList.toggle('on', mode);
     const head = mk('div', null, null, panel);
     mk('h3', null, `Review notes - ${notes.length}`, head);
-    mk('div', 'rn-meta', remote ? 'Shared: everyone with this link sees these.' : 'Saved in this browser only. Use Export to send them.', head);
+    mk('div', 'rn-meta', remote ? 'Shared: everyone with this link sees these.' : 'Saved on this device only. Tap Email notes to send them to SavTac.', head);
     const bar = mk('div', 'rn-row', null, head); bar.style.cssText = 'display:flex;gap:6px;margin-top:6px';
     const add = mk('button', 'rn-s rn-p', mode ? 'Stop adding' : 'Add note', bar); add.onclick = () => setMode(!mode);
-    const ex = mk('button', 'rn-s', 'Export', bar); ex.onclick = exportNotes;
+    mk('button', 'rn-s', 'Email notes', bar).onclick = emailNotes;
+    mk('button', 'rn-s', 'Download', bar).onclick = exportNotes;
     const cl = mk('button', 'rn-s', 'Close', bar); cl.onclick = () => panel.classList.remove('open');
 
     notes.sort((a, b) => a.n - b.n).forEach(n => {
@@ -163,12 +164,40 @@
   const commit = async n => { try { await store.put(n); closePop(); refresh(); } catch (e) { fail(e); } };
   const refresh = async () => { try { notes = await store.list(); } catch (e) { notes = []; console.warn('review-notes', e); } render(); };
   const setMode = on => { mode = on; if (on) panel.classList.remove('open'); document.documentElement.classList.toggle('rn-mode', on); closePop(); render(); };
-  const exportNotes = () => {
-    const txt = notes.sort((a, b) => a.n - b.n).map(n => `#${n.n} [${n.state}] ${n.author}, ${new Date(n.at).toLocaleString()}\nPage: ${n.url}  near: "${n.snip}"\n${n.body}\n`).join('\n');
-    const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(new Blob([txt], { type: 'text/plain' })), download: `review-notes-${page.replace(/\W+/g, '-')}.txt` });
-    a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  const fmt = (list, pg) => list.slice().sort((a, b) => a.n - b.n).map(n => `#${n.n} [${n.state}] ${n.author}, ${new Date(n.at).toLocaleString()}\nPage: ${pg}  near: "${n.snip}"\n${n.body}\n`).join('\n');
+  // Local mode: every page on this site that carries the script, so one email covers all tabs.
+  const allPages = () => {
+    if (remote) return [[page, notes]];
+    const out = [];
+    try {
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (!k.startsWith('rn:') || k === 'rn:author') continue;
+        try { const arr = JSON.parse(localStorage.getItem(k)); if (Array.isArray(arr) && arr.length) out.push([k.slice(3), arr]); } catch {}
+      }
+    } catch {}
+    return out.sort((x, y) => x[0].localeCompare(y[0]));
   };
-
+  const allText = groups => groups.map(([pg, list]) => `===== ${pg} (${list.length}) =====\n${fmt(list, pg)}`).join('\n');
+  const exportNotes = () => { // download fallback
+    const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(new Blob([allText(allPages())], { type: 'text/plain' })), download: `review-notes-${page.replace(/\W+/g, '-')}.txt` });
+    document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  };
+  // Static page can't send mail: copy the full list, open the reviewer's mail app addressed to us.
+  // ponytail: mailto caps out near 2k chars in some mail apps, so long lists ride the clipboard.
+  const emailNotes = async () => {
+    const groups = allPages(), count = groups.reduce((t, g) => t + g[1].length, 0);
+    if (!count) return alert('No notes yet.');
+    const full = allText(groups), to = cfg.email || 'dillon@sav-tac.com';
+    let copied = false; try { await navigator.clipboard.writeText(full); copied = true; } catch {}
+    let body = full;
+    if (encodeURIComponent(body).length > 1800) {
+      body = full.slice(0, 900) + (copied ? '\n\n[List cut short here. The full list is copied: select this line and paste.]' : '\n\n[List cut short. Use Download on the page and attach the file.]');
+    }
+    const subject = `Review notes (${count}) - ${groups.map(g => g[0]).join(', ')}`.slice(0, 150);
+    const a = Object.assign(document.createElement('a'), { href: `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, target: '_top' });
+    document.body.append(a); a.click(); a.remove();
+  };
   btn.onclick = () => { if (mode) return setMode(false); panel.classList.toggle('open'); };
   // Capture phase: in note mode, clicks place a note instead of following links/buttons.
   document.addEventListener('click', e => {
