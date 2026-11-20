@@ -25,7 +25,7 @@ body{margin:0;background:#050505}
 .sv-h{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.03em;line-height:1.14;margin:0;text-wrap:balance;color:var(--white)}
 .sv-h em{font-style:normal;color:var(--red)}
 .sv-eyebrow{display:inline-flex;align-items:center;gap:10px;font:600 12px/1 var(--cond);letter-spacing:.32em;text-transform:uppercase;color:var(--fog)}
-.sv-eyebrow::before{content:"";width:24px;height:1px;background:var(--red)}
+.sv-eyebrow::before,.v2-hero .sv-eyebrow::after{content:"";width:24px;height:1px;background:var(--red)}
 .sv-file{font:400 12px/1 var(--type);color:var(--smoke);letter-spacing:.04em;text-transform:uppercase}
 .sv-file b{color:var(--red);font-weight:400}
 .sv-sec-head{display:grid;gap:14px;margin-bottom:34px}
@@ -169,7 +169,7 @@ body{margin:0;background:#050505}
 .v2-hero__sub{max-width:620px;margin:0 auto;color:var(--mist)}
 .v2-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:0;padding:0;list-style:none}
 .v2-stat{position:relative;padding:20px 14px 16px;background:linear-gradient(#141516,#0c0c0d);border:1px solid var(--line)}
-.v2-stat::before{content:attr(data-no);position:absolute;top:10px;right:12px;font:400 10px/1 var(--type);color:var(--smoke)}
+.v2-stat::before{content:none;position:absolute;top:10px;right:12px;font:400 10px/1 var(--type);color:var(--smoke)}
 .v2-stat b{display:block;font:400 clamp(24px,7.4vw,40px)/1 var(--display);font-weight:400;font-variant-numeric:tabular-nums;color:var(--white)}
 .v2-stat span{display:block;margin-top:10px;font:600 11px/1.35 var(--cond);letter-spacing:.16em;text-transform:uppercase;color:var(--fog)}
 .v2-stat--big b{font-size:clamp(30px,9vw,72px);color:transparent;-webkit-text-stroke:1.4px var(--white)}
@@ -288,10 +288,10 @@ body{margin:0;background:#050505}
 <body>
 <div class="sv">
 <script>document.currentScript.parentElement.classList.add('sv--js')</script>
-<a class="sv-bar" href="#sv-gear">
+<div class="sv-bar">
   <span class="sv-bar__top"><span class="sv-bar__scan" aria-hidden="true"></span><i aria-hidden="true"></i>For the mission<i aria-hidden="true"></i></span>
-  <span class="sv-bar__bottom"><span class="sv-dot" aria-hidden="true"></span><span class="sv-bar__offer">A portion of every shirt goes to <b>Sentinel Foundation</b></span><span class="sv-bar__arrow" aria-hidden="true">&rsaquo;</span></span>
-</a>
+  <span class="sv-bar__bottom"><span class="sv-bar__offer">A portion of every shirt goes to <b>Sentinel Foundation</b></span></span>
+</div>
 <section class="v2-hero" aria-labelledby="v2-hero-title">
   <div class="sv-wrap">
     <div class="sv-collab">
@@ -307,11 +307,7 @@ body{margin:0;background:#050505}
       <h1 id="v2-hero-title" class="sv-h">Every number is a <em>true action</em></h1>
       <p class="v2-hero__sub">Counter-trafficking, crisis response and intelligence support. These figures come from Sentinel Foundation's 2025 Annual Report, published on their website.</p>
     </div>
-    <ul class="v2-stats"><li class="v2-stat v2-stat--big sv-rv" data-no="02"><b data-count="165" data-suffix="">165</b><span>Children safeguarded or recovered, 2025</span></li><li class="v2-stat v2-stat--big sv-rv" data-no="01"><b data-count="15" data-suffix="+">15+</b><span>Training and operational courses, 2025</span></li><li class="v2-stat v2-stat--big sv-rv" data-no="03"><b data-count="680" data-suffix="+">680+</b><span>Cases worked, 2025</span></li><li class="v2-stat sv-rv" data-no="04"><b data-count="9" data-suffix="">9</b><span>Countries impacted, 2025</span></li><li class="v2-stat sv-rv" data-no="05"><b data-count="150" data-suffix="+">150+</b><span>Law enforcement and partners trained, 2025</span></li><li class="v2-stat sv-rv" data-no="06"><b data-count="219" data-suffix="">219</b><span>Arrests, direct and partner operations, 2025</span></li><li class="v2-stat sv-rv" data-no="07"><b data-count="200" data-suffix="+">200+</b><span>Children supported through aftercare, cumulative</span></li></ul>
-    <div class="sv-ctas" data-hero>
-      <a class="sv-btn sv-btn--light" href="#sv-gear">Wear the mission &middot; $34.99</a>
-      <a class="sv-btn sv-btn--ghost" href="#sv-story">Read the mission</a>
-    </div>
+    <ul class="v2-stats" data-hero><li class="v2-stat v2-stat--big sv-rv" data-no="02"><b data-count="165" data-suffix="">165</b><span>Children safeguarded or recovered, 2025</span></li><li class="v2-stat v2-stat--big sv-rv" data-no="01"><b data-count="15" data-suffix="+">15+</b><span>Training and operational courses, 2025</span></li><li class="v2-stat v2-stat--big sv-rv" data-no="03"><b data-count="680" data-suffix="+">680+</b><span>Cases worked, 2025</span></li><li class="v2-stat sv-rv" data-no="04"><b data-count="9" data-suffix="">9</b><span>Countries impacted, 2025</span></li><li class="v2-stat sv-rv" data-no="05"><b data-count="150" data-suffix="+">150+</b><span>Law enforcement and partners trained, 2025</span></li><li class="v2-stat sv-rv" data-no="06"><b data-count="219" data-suffix="">219</b><span>Arrests, direct and partner operations, 2025</span></li><li class="v2-stat sv-rv" data-no="07"><b data-count="200" data-suffix="+">200+</b><span>Children supported through aftercare, cumulative</span></li></ul>
     <p class="v2-hero__note">Figures are from Sentinel Foundation's 2025 Annual Report.</p>
   </div>
 </section>
@@ -351,12 +347,6 @@ body{margin:0;background:#050505}
         </fieldset>
         <a class="sv-btn sv-btn--light sv-buy__go" href="https://sav-tac.com/products/sentinel-foundation-x-savtac" data-go>Select a size</a>
         <p class="sv-buy__hint" data-hint aria-live="polite"></p>
-        <ul class="v5-specs">
-          <li><b>Style</b>Graphic tee</li>
-          <li><b>Sizes</b>S to 3XL</li>
-          <li><b>Colors</b>Black, OD Green</li>
-          <li><b>Price</b>$34.99</li>
-        </ul>
         <a class="sv-buy__link" href="https://sav-tac.com/products/sentinel-foundation-x-savtac">View product page</a>
       </div>
       <button type="button" class="v5-flat v5-at-g" data-pic="green" aria-pressed="false" aria-label="Choose OD Green"><img src="https://cdn.shopify.com/s/files/1/1730/9811/files/Sg2.jpg?v=1794615446&amp;width=800" alt="OD Green Sentinel Foundation X SavTac tee, back" loading="lazy" width="1200" height="1528"><span>OD Green</span></button>
